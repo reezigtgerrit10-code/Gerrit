@@ -1,0 +1,255 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f1e8;
+  --card: rgba(255, 255, 255, 0.82);
+  --card-border: rgba(73, 94, 67, 0.14);
+  --text: #213126;
+  --muted: #5d6b60;
+  --accent: #567242;
+  --accent-dark: #3c542e;
+  --assistant: #edf4e8;
+  --user: #567242;
+  --shadow: 0 18px 45px rgba(36, 52, 34, 0.12);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(121, 151, 98, 0.18), transparent 35%),
+    linear-gradient(180deg, #f7f3ea 0%, #ebe3d4 100%);
+  color: var(--text);
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.hero-card,
+.chat-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.hero-copy,
+.chat-header p,
+.hint {
+  color: var(--muted);
+}
+
+.hero-panel {
+  padding: 1.25rem;
+  border-radius: 22px;
+  background: rgba(237, 244, 232, 0.9);
+  border: 1px solid rgba(86, 114, 66, 0.12);
+}
+
+.prompt-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.prompt-chip {
+  border: none;
+  background: #fff;
+  color: var(--accent-dark);
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  box-shadow: 0 6px 14px rgba(69, 93, 56, 0.08);
+}
+
+.prompt-chip:hover,
+.prompt-chip:focus-visible,
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(60, 84, 46, 0.14);
+}
+
+.chat-card {
+  padding: 1.5rem;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(86, 114, 66, 0.12);
+  color: var(--accent-dark);
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 0.5rem 0.1rem 1rem;
+}
+
+.message {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(86, 114, 66, 0.14);
+  flex: 0 0 auto;
+}
+
+.bubble {
+  max-width: min(80%, 720px);
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.assistant .bubble {
+  background: var(--assistant);
+  border-top-left-radius: 4px;
+}
+
+.user .bubble {
+  background: var(--user);
+  color: #fff;
+  border-top-right-radius: 4px;
+}
+
+.chat-form {
+  border-top: 1px solid rgba(73, 94, 67, 0.14);
+  padding-top: 1rem;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 5.5rem;
+  border: 1px solid rgba(73, 94, 67, 0.2);
+  border-radius: 18px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text);
+}
+
+textarea:focus-visible {
+  outline: 2px solid rgba(86, 114, 66, 0.45);
+  outline-offset: 2px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.85rem;
+}
+
+button[type="submit"] {
+  border: none;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  padding: 0.9rem 1.2rem;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 860px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-header,
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .badge {
+    width: fit-content;
+  }
+
+  .bubble {
+    max-width: 100%;
+  }
+}
