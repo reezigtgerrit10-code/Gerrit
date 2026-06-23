@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kruiden AI Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <div>
+          <p class="eyebrow">Slimme kruidenhulp</p>
+          <h1>Kruiden AI</h1>
+          <p class="hero-copy">
+            Stel vragen over kruiden, thee, geur, smaak en combinaties. De chat geeft
+            praktische suggesties en benadrukt dat het geen medisch advies is.
+          </p>
+        </div>
+        <div class="hero-panel">
+          <h2>Vraagideeën</h2>
+          <div class="prompt-list">
+            <button class="prompt-chip" type="button">Welke kruiden helpen bij ontspanning?</button>
+            <button class="prompt-chip" type="button">Maak een kruidenthee voor de avond.</button>
+            <button class="prompt-chip" type="button">Welke kruiden passen bij tomaat?</button>
+            <button class="prompt-chip" type="button">Ik zoek frisse kruiden voor een zomerdrank.</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="chat-card" aria-label="Kruiden AI chat">
+        <header class="chat-header">
+          <div>
+            <h2>Chat met Kruiden AI</h2>
+            <p>Voor recepten, smaakprofielen, rustgevende blends en algemene kruidenkennis.</p>
+          </div>
+          <span class="badge">NL • lokaal</span>
+        </header>
+
+        <div id="chatMessages" class="chat-messages" role="log" aria-live="polite">
+          <article class="message assistant">
+            <div class="avatar">🌿</div>
+            <div class="bubble">
+              Hallo! Ik ben Kruiden AI. Vraag me bijvoorbeeld naar ontspannende kruiden,
+              kookcombinaties of een passende thee-blend.
+            </div>
+          </article>
+        </div>
+
+        <form id="chatForm" class="chat-form">
+          <label class="sr-only" for="chatInput">Typ je vraag</label>
+          <textarea
+            id="chatInput"
+            name="message"
+            rows="3"
+            maxlength="400"
+            placeholder="Bijv. welke kruiden passen bij pasta of welke thee is zacht voor de avond?"
+            required
+          ></textarea>
+          <div class="form-row">
+            <p class="hint">Tip: noem doel, smaak of gerecht voor betere suggesties.</p>
+            <button type="submit">Verstuur</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
