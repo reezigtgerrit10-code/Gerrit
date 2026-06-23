@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kruiden AI Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card">
+        <div>
+          <p class="eyebrow">Slimme kruidenassistent</p>
+          <h1>Kruiden AI</h1>
+          <p class="hero-copy">
+            Stel vragen over kruiden, toepassingen, smaakcombinaties en eenvoudige
+            verzorging. Deze demo geeft praktische tips en herinneringen om bij
+            medisch gebruik altijd een professional te raadplegen.
+          </p>
+        </div>
+        <div class="hero-tips">
+          <p>Probeer bijvoorbeeld:</p>
+          <div class="suggestions" id="suggestions"></div>
+        </div>
+      </section>
+
+      <section class="chat-card" aria-label="Kruiden AI chat">
+        <header class="chat-header">
+          <div>
+            <h2>Chat met Kruiden AI</h2>
+            <p>Antwoorden op basis van een ingebouwde kruidenkennisbank.</p>
+          </div>
+          <span class="status-pill">Online</span>
+        </header>
+
+        <div id="chat-log" class="chat-log" aria-live="polite"></div>
+
+        <form id="chat-form" class="chat-form">
+          <label class="sr-only" for="user-input">Je vraag</label>
+          <textarea
+            id="user-input"
+            name="prompt"
+            rows="3"
+            placeholder="Bijv. Waarvoor gebruik je kamille?"
+            required
+          ></textarea>
+          <div class="form-actions">
+            <p class="form-hint">Informatief, geen medisch advies.</p>
+            <button type="submit">Verstuur</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <template id="message-template">
+      <article class="message">
+        <div class="message-avatar"></div>
+        <div class="message-bubble">
+          <p class="message-author"></p>
+          <div class="message-text"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
